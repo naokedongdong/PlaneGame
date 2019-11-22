@@ -2,11 +2,14 @@
 
 import pygame
 import random
+import sys
 
-#屏幕边框大小
+#大小常量
 SCREEN_SIZE = (480, 852)
 PLANE_SIZE = (100, 124)
 ENEMY_SIZE = (51, 39)
+PLANE_BULLET_SIZE = (22, 22)
+ENEMY_BULLET_SIZE = (9, 21)
 
 #基础类
 class Base(object):
@@ -19,7 +22,6 @@ class Base(object):
     def display(self):
         self.screen.blit(self.image, (self.x, self.y))
 
-#定义英雄飞机类
 class HeroPlane(Base):
 
     #定义hero移动的步长
@@ -55,7 +57,6 @@ class HeroPlane(Base):
         bullet_x = self.x + PLANE_SIZE[0]/2 - 8
         bullet_y = self.y - 10
         self.bullet_list.append(HeroBullet(bullet_x, bullet_y, self.screen))
-
 
 #定义敌机类
 class EnemyPlane(Base):

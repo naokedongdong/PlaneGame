@@ -1,4 +1,4 @@
-# -*- coding=utf-8 -*-
+# -*- coding:utf-8 -*-
 
 import os
 from PIL import Image
@@ -45,6 +45,12 @@ def main():
           screen.blit(background,(0,0))
 
           #加载hero plane
+          if if_shot(hero, enemy):
+               hero.image = pygame.image.load("/Users/Sander/python/PlaneGame/pic/hero_blowup_n1.png")
+               hero.display()
+               print("GET SHOT!!!")
+               enemy.display()
+               enemy.move()
           hero.display()
           key_control(hero)
 
